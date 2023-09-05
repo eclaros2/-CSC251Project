@@ -1,5 +1,7 @@
+//name of the class
 public class Policy
 {
+   //attributes for the class (fields)
    private int policyNumber;
    private String providerName;
    private String policyHolderFirstName;
@@ -9,15 +11,20 @@ public class Policy
    private double policyHolderHeight;
    private double policyHolderWeight;
    
+   //no-arg constructor
    public Policy() 
    {
-      // no-arg constructor
+      //initialize the variables
       this.policyNumber = 0;
+      this.policyHolderFirstName = "";
+      this.policyHolderLastName = "";
       this.policyHolderAge = 0;
+      this.policyHolderSmokingStatus = "";
       this.policyHolderHeight = 0;
       this.policyHolderWeight = 0;
    }
    
+   //a constructor that accepts arguments
    public Policy(int policyNumber, String providerName, String policyHolderFirstName, String policyHolderLastName, int policyHolderAge, String policyHolderSmokingStatus, double policyHolderHeight, double policyHolderWeight)
    {
       this.policyNumber = policyNumber;
@@ -28,23 +35,12 @@ public class Policy
       this.policyHolderSmokingStatus = policyHolderSmokingStatus;
       this.policyHolderHeight = policyHolderHeight;
       this.policyHolderWeight = policyHolderWeight;
-   }
+   }   
    
-   public void setPolicyNumber(int policyNumber)
-   {
-      this.policyNumber = policyNumber;
-   }
-   
+   //getter methods
    public int getPolicyNumber()
    {
       return policyNumber;
-   }
-   
-   
-   
-   public void setProviderName(String providerName)
-   {
-      this.providerName = providerName;
    }
    
    public String getProviderName()
@@ -52,23 +48,9 @@ public class Policy
       return providerName;
    }
    
-   
-   
-   public void setPolicyHolderFirstName(String policyHolderFirstName)
-   {
-      this.policyHolderFirstName = policyHolderFirstName;
-   }
-   
    public String getPolicyHolderFirstName()
    {
       return policyHolderFirstName;
-   }
-   
-   
-   
-   public void setPolicyHolderLastName(String policyHolderLastName)
-   {
-      this.policyHolderLastName = policyHolderLastName;
    }
    
    public String getPolicyHolderLastName()
@@ -76,23 +58,9 @@ public class Policy
       return policyHolderLastName;
    }
    
-   
-   
-   public void setPolicyHolderAge(int policyHolderAge)
-   {
-      this.policyHolderAge = policyHolderAge;
-   }
-   
    public int getPolicyHolderAge()
    {
       return policyHolderAge;
-   }
-   
-   
-   
-   public void setPolicyHolderSmokingStatus(String policyHolderSmokingStatus)
-   {
-      this.policyHolderSmokingStatus = policyHolderSmokingStatus;
    }
    
    public String getPolicyHolderSmokingStatus()
@@ -100,23 +68,9 @@ public class Policy
       return policyHolderSmokingStatus;
    }
    
-   
-   
-   public void setPolicyHolderHeight(double policyHolderHeight)
-   {
-      this.policyHolderHeight = policyHolderHeight;
-   }
-   
    public double getPolicyHolderHeight()
    {
       return policyHolderHeight;
-   }
-   
-   
-   
-   public void setPolicyHolderWeight(double policyHolderWeight)
-   {
-      this.policyHolderWeight = policyHolderWeight;
    }
    
    public double getPolicyHolderWeight()
@@ -124,14 +78,13 @@ public class Policy
       return policyHolderWeight;
    }
    
-   
-   
-   
+   //method for calculating BMI
    public double getBMI()
    {
       return (policyHolderWeight * 703 ) / (policyHolderHeight * policyHolderHeight);
    }
    
+   //method for calculating the policy price
    public double calculatePolicyPrice()
    {
       double price = 600;
@@ -144,6 +97,10 @@ public class Policy
       if(policyHolderSmokingStatus.equalsIgnoreCase("smoker"))
       {
          price += 100;
+      }
+      else
+      {
+         price += 0;
       }
       
       if(getBMI() > 35)
