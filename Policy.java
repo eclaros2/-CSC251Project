@@ -11,7 +11,10 @@ public class Policy
    private double policyHolderHeight;
    private double policyHolderWeight;
    
-   //no-arg constructor
+   /**
+    No-argument constructor for the Policy class
+    Initializes all variables to their default values
+    */
    public Policy() 
    {
       //initialize the variables
@@ -24,7 +27,18 @@ public class Policy
       this.policyHolderWeight = 0;
    }
    
-   //a constructor that accepts arguments
+   /**
+    Constructor for the Policy class that accepts the attributes
+    
+    @param policyNumber The policy number
+    @param providerName The name of the insurance provider
+    @param policyHolderFirstName The first name of the policy holder
+    @param policyHolderLastName The last name of the policy holder
+    @param policyHolderAge The age of the policy holder
+    @param policyHolderSmokingStatus The smoking status of the policy holder
+    @param policyHolderHeight The height of the policy holder in inches
+    @param policyHolderWeight The weight of the policy holder in pounds
+    */
    public Policy(int policyNumber, String providerName, String policyHolderFirstName, String policyHolderLastName, int policyHolderAge, String policyHolderSmokingStatus, double policyHolderHeight, double policyHolderWeight)
    {
       this.policyNumber = policyNumber;
@@ -37,54 +51,101 @@ public class Policy
       this.policyHolderWeight = policyHolderWeight;
    }   
    
-   //getter methods
+   /**
+    Get the policy number
+    
+    @return The policy number
+    */
    public int getPolicyNumber()
    {
       return policyNumber;
    }
    
+   /**
+    Get the name of the insurance provider
+    
+    @return The provider name
+    */
    public String getProviderName()
    {
       return providerName;
    }
    
+   /**
+    Get the first name of the policy holder
+    
+    @return The first name of the policy holder
+    */
    public String getPolicyHolderFirstName()
    {
       return policyHolderFirstName;
    }
    
+   /**
+    Get the last name of the policy holder
+    
+    @return The last name of the policy holder
+    */
    public String getPolicyHolderLastName()
    {
       return policyHolderLastName;
    }
    
+   /**
+    Get the age of the policy holder
+    
+    @return The age of the policy holder
+    */
    public int getPolicyHolderAge()
    {
       return policyHolderAge;
    }
    
+   /**
+    Get the smoking status of the policy holder
+    
+    @return The smoking status ("smoker" or "non-smoker")
+    */
    public String getPolicyHolderSmokingStatus()
    {
       return policyHolderSmokingStatus;
    }
    
+   /**
+    Get the height of the policy holder in inches
+    
+    @return The height in inches
+    */
    public double getPolicyHolderHeight()
    {
       return policyHolderHeight;
    }
    
+   /**
+    Get the weight of the policy holder in pounds
+    
+    @return The weight in pounds
+    */
    public double getPolicyHolderWeight()
    {
       return policyHolderWeight;
    }
    
-   //method for calculating BMI
+   /**
+    Calculate the BMI of the policy holder
+    
+    @return The BMI value.
+    */
    public double getBMI()
    {
       return (policyHolderWeight * 703 ) / (policyHolderHeight * policyHolderHeight);
    }
    
-   //method for calculating the policy price
+   /**
+    Calculate the price of the insurance policy
+    
+    @return The policy price
+    */
    public double calculatePolicyPrice()
    {
       double price = 600;
