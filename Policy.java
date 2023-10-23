@@ -4,7 +4,8 @@ public class Policy
    //attributes for the class (fields)
    private int policyNumber;
    private String providerName;
-
+   
+   private static int numPoliciesCreated = 0;
    
    /**
     No-argument constructor for the Policy class
@@ -31,6 +32,7 @@ public class Policy
     */
    public Policy(int policyNumber, String providerName)
    {
+      numPoliciesCreated++;
       this.policyNumber = policyNumber;
       this.providerName = providerName;
     }   
@@ -53,6 +55,11 @@ public class Policy
    public String getProviderName()
    {
       return providerName;
+   }
+   
+   public int getNumPoliciesCreated()
+   {
+      return numPoliciesCreated;
    }
    
     /**
