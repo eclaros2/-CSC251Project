@@ -64,10 +64,10 @@ public class Project_Eli_Claros
          
          for(int i = 0; i < policies.size(); i++)
          { 
-            System.out.println( "Policy Number: " + policies.get(i).getPolicyNumber()); //instance method - returns the course name
-            System.out.println( "Provider Name: " + policies.get(i).getProviderName()); //instance method - returns the course number
-            System.out.println( "Policyholder's First Name: " + policies.get(i).getPolicyHolderFirstName()); //instance method - returns the contact hours
-            System.out.println( "Policyholder's Last Name: " + policies.get(i).getPolicyHolderLastName()); //instance method - returns the credit hours
+            System.out.println( "Policy Number: " + policies.get(i).getPolicyNumber());
+            System.out.println( "Provider Name: " + policies.get(i).getProviderName());
+            System.out.println( "Policyholder's First Name: " + policies.get(i).getPolicyHolderFirstName());
+            System.out.println( "Policyholder's Last Name: " + policies.get(i).getPolicyHolderLastName());
             System.out.println( "Policyholder's Age: " + policies.get(i).getPolicyHolderAge());
             System.out.println( "Policyholder's Smoking Status: " + policies.get(i).getPolicyHolderSmokingStatus());
             System.out.printf( "Policyholder's Height: %.2f ", policies.get(i).getPolicyHolderHeight());
