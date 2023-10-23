@@ -20,7 +20,7 @@ public class PolicyHolder
       this.policyHolderAge = 0;
       this.policyHolderSmokingStatus = "";
       this.policyHolderHeight = 0;
-      this.policyHolderWeight = 0;
+      this.policyHolderWeight = 0; 
    }
    
    /**
