@@ -85,4 +85,17 @@ public class Policy
       
       return price;
    }
+   
+   public String toString()
+   {
+       return "Policy Number: " + policyNumber +
+               "\nProvider Name: " + providerName +
+               "\nPolicy Holder: " + policyHolderFirstName + " " + policyHolderLastName +
+               "\nAge: " + policyHolderAge +
+               "\nSmoking Status: " + policyHolderSmokingStatus +
+               "\nHeight: " + policyHolderHeight + " inches" +
+               "\nWeight: " + policyHolderWeight + " pounds" +
+               "\nBMI: " + getBMI() +
+               "\nPolicy Price: " + calculatePolicyPrice();
+   }
 }
