@@ -112,4 +112,14 @@ public class PolicyHolder
    {
       return (policyHolderWeight * 703 ) / (policyHolderHeight * policyHolderHeight);
    }
+   
+   public String toString()
+   {
+        return "Policy Holder: " + policyHolderFirstName + " " + policyHolderLastName +
+               "\nAge: " + policyHolderAge +
+               "\nSmoking Status: " + policyHolderSmokingStatus +
+               "\nHeight: " + policyHolderHeight + " inches" +
+               "\nWeight: " + policyHolderWeight + " pounds" +
+               "\nBMI: " + getBMI();
+   }
 }
