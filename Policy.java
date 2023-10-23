@@ -35,7 +35,7 @@ public class Policy
       numPoliciesCreated++;
       this.policyNumber = policyNumber;
       this.providerName = providerName;
-    }   
+   }   
    
    /**
     Get the policy number
