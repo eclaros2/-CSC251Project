@@ -5,6 +5,12 @@ public class Policy
    private int policyNumber;
    private String providerName;
    
+   private static final double BASE_POLICY_PRICE = 600.0;
+   private static final double AGE_THRESHOLD = 50;
+   private static final double SMOKER_PRICE = 100.0;
+   private static final double BMI_PRICE_PER_UNIT = 20.0;
+   private static final double BMI_THRESHOLD = 35.0;
+   
    //static variable to keep count of the number of policies created
    private static int numPoliciesCreated = 0;
    
@@ -20,6 +26,7 @@ public class Policy
       //initialize the variables
       this.policyNumber = 0;
       this.providerName = "";
+      this.policyHolder = new PolicyHolder();
    }
    
    /**
@@ -88,25 +95,25 @@ public class Policy
     */
    public double calculatePolicyPrice()
    {
-      double price = 600;
+      double price = BASE_POLICY_PRICE;
       
-      if(policyHolder.getPolicyHolderAge() > 50)
+      if(policyHolder.getPolicyHolderAge() > AGE_THRESHOLD)
       {
          price += 75;
       }
       
       if(policyHolder.getPolicyHolderSmokingStatus().equalsIgnoreCase("smoker"))
       {
-         price += 100;
+         price += SMOKER_PRICE;
       }
       else
       {
          price += 0;
       }
       
-      if(policyHolder.getBMI() > 35)
+      if(policyHolder.getBMI() > BMI_THRESHOLD)
       {
-         price += (policyHolder.getBMI() - 35) * 20;
+         price += (policyHolder.getBMI() - BMI_THRESHOLD) * BMI_PRICE_PER_UNIT;
       }
       
       return price;
@@ -117,7 +124,7 @@ public class Policy
    {
        return "Policy Number: " + policyNumber +
                "\nProvider Name: " + providerName + "\n" +
-               policyHolder.toString() +
-               "\nPolicy Price: $" + calculatePolicyPrice();
+               policyHolder +
+               "\nPolicy Price: $" + String.format("%.2f", calculatePolicyPrice());
    }
 }
