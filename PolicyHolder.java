@@ -8,6 +8,7 @@ public class PolicyHolder
    private double policyHolderHeight;
    private double policyHolderWeight;
    
+   private static final double BMI_CONSTANT = 703.0;
    /**
     No-argument constructor for the Policy class
     Initializes all variables to their default values
@@ -129,8 +130,8 @@ public class PolicyHolder
     @return (policyHolderWeight * 703 ) / (policyHolderHeight * policyHolderHeight) The BMI value.
     */
    public double getBMI()
-   {
-      return (policyHolderWeight * 703 ) / (policyHolderHeight * policyHolderHeight);
+   {  
+      return (policyHolderWeight * BMI_CONSTANT ) / (policyHolderHeight * policyHolderHeight);
    }
    
    //toString method for the PolicyHolder class
@@ -142,6 +143,6 @@ public class PolicyHolder
                "\nPolicyholder's Smoking Status: " + policyHolderSmokingStatus +
                "\nPolicyholder's Height: " + policyHolderHeight + " inches" +
                "\nPolicyholder's Weight: " + policyHolderWeight + " pounds" +
-               "\nPolicyholder's BMI: " + getBMI();
+               "\nPolicyholder's BMI: " + String.format("%.2f", getBMI());
    }
 }
